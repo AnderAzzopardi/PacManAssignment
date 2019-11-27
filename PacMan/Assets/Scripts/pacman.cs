@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pacman : MonoBehaviour
+public class pacman : MonoBehaviour
 {
    
     [SerializeField] float movementSpeed = 15f;
