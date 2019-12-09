@@ -14,19 +14,20 @@ public class Spawner : MonoBehaviour
     }
 
 
-     void OnCollisionEnter2D( Collision2D myCol){
+    
+
+    // Update is called once per frame
+    void Update()
+    {
+         void OnCollisionEnter2D( Collision2D myCol){
      
      if(myCol.gameObject.name == "pacman"){
          Destroy(myCol.gameObject);
         }
  }
-
-    // Update is called once per frame
-    void Update()
-    {
     
     }
-
+ 
 
 
 
