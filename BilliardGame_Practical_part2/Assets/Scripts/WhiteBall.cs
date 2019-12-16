@@ -5,6 +5,8 @@ using UnityEngine;
 public class WhiteBall : MonoBehaviour
 {
 
+
+    ColouredBall white;
     int x;
     int y;
     // Start is called before the first frame update
@@ -12,13 +14,15 @@ public class WhiteBall : MonoBehaviour
     {
     x  = Random.Range(-1,1);
     y  = Random.Range(15,20);
+
+     white = FindObjectOfType<ColouredBall>();
     }
 
     // Update is called once per frame
     void Update()
     {
         LaunchBall();
-        DestroyBallWhenItHitsHole();
+        
         
     }
 
@@ -29,18 +33,14 @@ public class WhiteBall : MonoBehaviour
         }
 
     }
-
-
-
-    public void  DestroyBallWhenItHitsHole (Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "hole")
-        {
-            
-             Destroy(this.gameObject);
-        }
-
+        white.DestroyBallWhenItHitsHole(collision, gameObject);
         
     }
+
+
+
+  
 }

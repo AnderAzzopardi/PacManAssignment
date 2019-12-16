@@ -13,19 +13,28 @@ public class ColouredBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     DestroyBallWhenItHitsHole();
+    
     }
+   
 
-    public void DestroyBallWhenItHitsHole (Collision2D collision)
+
+    public void DestroyBallWhenItHitsHole(Collision2D collision, GameObject ball)
     {
 
         if (collision.gameObject.tag == "hole")
         {
             
-             Destroy(this.gameObject);
+             Destroy(ball);
         }
 
         
     }
-    
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        DestroyBallWhenItHitsHole(collision, gameObject);
+        
+    }
+
 }
