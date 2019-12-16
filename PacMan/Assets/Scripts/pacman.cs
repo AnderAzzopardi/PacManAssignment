@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class pacman : MonoBehaviour
 {
+
+
+
    
     [SerializeField] float movementSpeed = 15f;
 
@@ -20,6 +23,13 @@ public class pacman : MonoBehaviour
     void Update()
     {
         Move();
+/*
+        if (Input.down-key)
+ 
+        transform.Rotate (new Vector3 (0, -90, 0) * Time.fixedDeltaTime);
+        }
+
+*/
     }
 
 
@@ -72,10 +82,7 @@ public class pacman : MonoBehaviour
 
     }
 
-        // Animation Parameters
-    Vector2 dir = dest - (Vector2)transform.position;
-    GetComponent<Animator>().SetFloat("DirX", dir.x);
-    GetComponent<Animator>().SetFloat("DirY", dir.y);
+        
 
 
 
