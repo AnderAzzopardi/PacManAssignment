@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class pacman : MonoBehaviour
 {
+   [SerializeField] public KeyCode pressUp;
+  [SerializeField]  public KeyCode pressDown;
+   [SerializeField] public KeyCode pressLeft;
+
+   [SerializeField] public KeyCode pressRight;
+
+
 
 
 
@@ -23,13 +30,22 @@ public class pacman : MonoBehaviour
     void Update()
     {
         Move();
-/*
-        if (Input.down-key)
- 
-        transform.Rotate (new Vector3 (0, -90, 0) * Time.fixedDeltaTime);
-        }
 
-*/
+    if (Input.getKeyDown(pressUp))
+        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,0);
+
+     if (Input.getKeyDown(pressDown))
+        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,180);
+
+     if (Input.getKeyDown(pressLeft))
+        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,90);
+
+     if (Input.getKeyDown(pressRight))
+        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,-90);
+
+    
+
+
     }
 
 
@@ -81,6 +97,9 @@ public class pacman : MonoBehaviour
        
 
     }
+
+
+
 
         
 
