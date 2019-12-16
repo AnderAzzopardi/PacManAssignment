@@ -29,11 +29,15 @@ public class ScoreScript : MonoBehaviour
         if(scoreValue == 98)
         {
             SceneManager.LoadScene(1);
+            scoreValue = scoreValue + 1;
         }
-
-        if (scoreValue == 200)
+        
+        if (scoreValue == 372)
         {
             SceneManager.LoadScene("Win");
+            scoreValue = scoreValue - 1;
         }
+        
     }
+    
 }
