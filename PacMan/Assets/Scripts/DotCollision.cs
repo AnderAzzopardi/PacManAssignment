@@ -22,6 +22,8 @@ public class DotCollision : MonoBehaviour
      if(myCol.gameObject.tag == "pacman"){
          Destroy(gameObject);
         }
+
+        ScoreScript.scoreValue += 1;
  }
 
 }

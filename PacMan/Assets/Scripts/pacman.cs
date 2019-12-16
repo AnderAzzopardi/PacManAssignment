@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class pacman : MonoBehaviour
 {
-   [SerializeField] public KeyCode pressUp;
+
+    //Making him move with up down left and right arrow keys
+    [SerializeField] public KeyCode pressUp;
   [SerializeField]  public KeyCode pressDown;
    [SerializeField] public KeyCode pressLeft;
 
    [SerializeField] public KeyCode pressRight;
+    
+    // Making him move with WASD
+
+    [SerializeField] public KeyCode pressW;
+    [SerializeField] public KeyCode pressS;
+    [SerializeField] public KeyCode pressA;
+
+    [SerializeField] public KeyCode pressD;
 
 
 
 
 
-   
+
     [SerializeField] float movementSpeed = 15f;
 
     float xMin, xMax, yMin, yMax ; 
@@ -31,19 +41,34 @@ public class pacman : MonoBehaviour
     {
         Move();
 
-    if (Input.getKeyDown(pressUp))
-        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,0);
+        //Making him move with up down left and right arrow keys
 
-     if (Input.getKeyDown(pressDown))
-        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,180);
-
-     if (Input.getKeyDown(pressLeft))
+    if (Input.GetKeyDown(pressUp))
         GetComponent<Transform>().eulerAngles = new Vector3 (0,0,90);
 
-     if (Input.getKeyDown(pressRight))
+     if (Input.GetKeyDown(pressDown))
         GetComponent<Transform>().eulerAngles = new Vector3 (0,0,-90);
 
-    
+     if (Input.GetKeyDown(pressLeft))
+        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,180);
+
+     if (Input.GetKeyDown(pressRight))
+        GetComponent<Transform>().eulerAngles = new Vector3 (0,0,0);
+
+     // Making him move with WASD
+     if (Input.GetKeyDown(pressW))
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 90);
+
+     if (Input.GetKeyDown(pressS))
+            GetComponent<Transform>().eulerAngles = new Vector3(0, 0, -90);
+
+     if (Input.GetKeyDown(pressA))
+        GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 180);
+
+     if (Input.GetKeyDown(pressD))
+        GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 0);
+
+
 
 
     }
