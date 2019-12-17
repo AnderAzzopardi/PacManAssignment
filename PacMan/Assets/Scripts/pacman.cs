@@ -119,15 +119,16 @@ public class pacman : MonoBehaviour
         float yPos = Mathf.Clamp(MoveY(), yMin, yMax);
         
         transform.position = new Vector2(xPos, yPos);
-       
+
 
     }
 
-
-
-
-        
-
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "pacman")
+        {
+            transform.position = new Vector3(0, 0, 0);//(where you want to teleport)
+        }
+    }
 
 }
